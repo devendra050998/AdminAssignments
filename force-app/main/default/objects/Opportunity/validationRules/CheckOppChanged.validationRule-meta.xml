@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckOppChanged</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( $Profile.Name !=&quot;System Administrator&quot;,IF(ISPICKVAL(StageName,&quot;Closed Won&quot;) &amp;&amp;  ISPICKVAL(PRIORVALUE( StageName ), &quot;Negotiation/Review&quot;), ISBLANK( NextStep ) , false), false)</errorConditionFormula>
+    <errorMessage>For system Admistration the next step can be blank</errorMessage>
+</ValidationRule>
